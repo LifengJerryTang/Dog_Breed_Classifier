@@ -70,4 +70,36 @@ def calculates_results_stats(results_dic):
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
     # this function 
-    return None
+    results_stats_dic = {}
+    fields = ['n_images', 'n_dogs_img', 'n_notdogs_img', 'n_match', 'n_correct_dogs', 'n_correct_notdogs', 'n_correct_breed', 'pct_match', 'pct_correct_dogs', 'pct_correct_breed', 'pct_correct_notdogs']
+    
+    for field in fields:
+        results_stats_dic[field] = 0
+    
+    for image_name in results_dic.keys():
+        results_stats['n_images'] += 1
+        
+        if results_dic[image_name][3] == 1:
+            results_stats['n_dogs_img'] += 1
+        else:
+            results_stats['n_notdogs_img'] += 1
+            
+        if results_dic[image_name][2] == 1:
+            results_stats['n_match'] += 1
+        
+        if results_dic[image_name][3] == results_dic[image_name][4] == 1:
+            results_stats['n_correct_dogs'] += 1
+            
+       if results_dic[image_name][2] == results_dic[image_name][3] == 1:
+            results_stats['n_correct_breed'] += 1
+            
+        if results_dic[image_name][3] == results_dic[image_name][4] == 0:
+            results_stats['n_correct_notdogs'] += 1
+    
+    results_stats_dic['pct_match'] = (results_stats['n_match'] * 100) / results_stats['n_images']
+    results_stats_dic['pct_correct_dogs'] = (results_stats['n_correct_dogs'] * 100) / results_stats['n_images']
+    results_stats_dic['pct_correct_breed'] = (results_stats['pct_correct_breed'] * 100) / results_stats['n_images']
+    results_stats_dic['pct_correct_notdogs'] = (results_stats['n_correct_notdogs'] * 100) / results_stats['n_images']
+    results_stats_dic['pct_correct_breed'] = (results_stats['n_correct_breed'] * 100) / results_stats['n_images']
+    
+    return results_stats_dic

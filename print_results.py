@@ -62,5 +62,30 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
-                
+    print(f"-------------------- RESULT ({model}) --------------------")
+    fields = ['n_images', 'n_dogs_img', 'n_notdogs_img', 'n_match', 'n_correct_dogs', 'n_correct_notdogs', 'n_correct_breed', 'pct_match', 'pct_correct_dogs', 'pct_correct_breed', 'pct_correct_notdogs']
+    print(f"Number of images: {results_stats_dic['n_images']}")
+    print(f"Number of dog images: {results_stats_dic['n_dogs_img']}")
+    print(f"Number of non-dog images: {results_stats_dic['n_notdogs_img']}")
+    print(f"Number of matches: {results_stats_dic['n_match']}")
+    print(f"Number of correctly classified dog images: {results_stats_dic['n_correct_dogs']}")
+    print(f"Number of correctly classified non-dog images: {results_stats_dic['n_correct_notdogs']}")
+    print(f"Number of correctly classified breed images: {results_stats_dic['n_correct_breed']}")
+    
+    print('----------------------------------------')
+    
+    print(f"% of matches: {results_stats_dic['pct_match']}%")
+    print(f"% of correctly classified dog images: {results_stats_dic['pct_correct_dogs']}%")
+    print(f"% of correctly classified non-dog images: {results_stats_dic['pct_correct_notdogs']}%")
+    print(f"% of correctly classified breed images: {results_stats_dic['pct_correct_breed']}%")
+    
+    print('----------------------------------------')
+    
+    for image_name in results_dic.keys():
+        
+        if results_dic[image_name][3] != results_dic[image_name][4] and print_incorrect_dogs:
+            print(f"{results_dic[0]} was an incorrectly classfied dog :(")
+            
+       if results_dic[image_name][2] != results_dic[image_name][3] and print_incorrect_breed:
+            print(f"{results_dic[0]} was an incorrectly classfied breed :(")
+            

@@ -67,4 +67,23 @@ def adjust_results4_isadog(results_dic, dogfile):
     Returns:
            None - results_dic is mutable data type so no return needed.
     """           
-    None
+    breed_names = {}
+    
+    with open(dogfile, 'r') as file:
+        lines = file.readlines()
+        breed_names = set(lines)
+    
+    for image_name in results_dic.keys():
+        image_label = results_dic[image_name][0]
+        classified_result = results_dic[image_name][1]
+        
+        if image_label in breed_names:
+            results_dic[image_name].append(1)
+        else:
+            results_dic[image_name].append(0)
+            
+        if classified_result in breed_names:
+            results_dic[image_name].append(1)
+        else:
+            results_dic[image_name].append(0)
+        

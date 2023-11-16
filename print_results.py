@@ -86,6 +86,6 @@ def print_results(results_dic, results_stats_dic, model,
         if results_dic[image_name][3] != results_dic[image_name][4] and print_incorrect_dogs:
             print(f"{results_dic[0]} was an incorrectly classfied dog :(")
             
-       if results_dic[image_name][2] != results_dic[image_name][3] and print_incorrect_breed:
+        if results_dic[image_name][2] != results_dic[image_name][3] and print_incorrect_breed:
             print(f"{results_dic[0]} was an incorrectly classfied breed :(")
             

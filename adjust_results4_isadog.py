@@ -75,26 +75,26 @@ def adjust_results4_isadog(results_dic, dogfile):
             if not line:
                 break
 
-            breed_names.add(line[:-1])
+            line = line.rstrip()
+            
+            breed_names.add(line)
 
 
 
-    print("Breed names", breed_names)
+#     print("Breed names", breed_names)
     
     for image_name in results_dic.keys():
         image_label = results_dic[image_name][0]
         classified_result = results_dic[image_name][1]
         
-        print(f"Image Label: {image_label}")
-        print(f"Classified Result: {classified_result}")
+#         print(f"Image Label: {image_label}")
+#         print(f"Classified Result: {classified_result}")
         if image_label in breed_names:
-            print("Image label in!!")
             results_dic[image_name].append(1)
         else:
             results_dic[image_name].append(0)
             
         if classified_result in breed_names:
-            print("classified result in!")
             results_dic[image_name].append(1)
         else:
             results_dic[image_name].append(0)

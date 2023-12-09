@@ -1,0 +1,92 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = resnet 
+ dogfile = dognames.txt
+Dog_01.jpeg
+Backpack_01.jpeg
+.Dalmatian_04017.jpg
+Cat_01.jpeg
+Dog_02.jpeg
+
+Pet Image Label Dictionary has 5 key-value pairs.
+Below are 5 of them:
+ 1 key:                    Dog_01.jpeg  label:                        dog
+ 2 key:               Backpack_01.jpeg  label:                   backpack
+ 3 key:           .Dalmatian_04017.jpg  label:                 .dalmatian
+ 4 key:                    Cat_01.jpeg  label:                        cat
+ 5 key:                    Dog_02.jpeg  label:                        dog
+
+     MATCH:
+
+                   Cat_01.jpeg: 
+Real:                        cat   Classifier:      siamese cat, siamese, cat
+
+ NOT A MATCH:
+
+                   Dog_01.jpeg: 
+Real:                        dog   Classifier:               golden retriever
+
+              Backpack_01.jpeg: 
+Real:                   backpack   Classifier:               mailbag, postbag
+
+          .Dalmatian_04017.jpg: 
+Real:                 .dalmatian   Classifier: dalmatian, coach dog, carriage dog
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier:               golden retriever
+
+# Total Images 5 # Matches: 1 # NOT Matches: 4
+
+     MATCH:
+
+                   Cat_01.jpeg: 
+Real:                        cat   Classifier:      siamese cat, siamese, cat  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                   Dog_01.jpeg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+              Backpack_01.jpeg: 
+Real:                   backpack   Classifier:               mailbag, postbag  
+PetLabelDog: 0  ClassLabelDog: 0
+
+          .Dalmatian_04017.jpg: 
+Real:                 .dalmatian   Classifier: dalmatian, coach dog, carriage dog  
+PetLabelDog: 0  ClassLabelDog: 1
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 5 # Matches: 1 # NOT Matches: 4
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  5  N Dog Images:  2  N NotDog Images:  3 
+Pct Corr dog: 100.0 Pct Corr NOTdog:  66.7  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  5  N Dog Images:  2  N NotDog Images:  3 
+Pct Corr dog: 100.0 Pct Corr NOTdog:  66.7  Pct Corr Breed:   0.0
+-------------------- RESULT (resnet) --------------------
+Number of images: 5
+Number of dog images: 2
+Number of non-dog images: 3
+Number of matches: 1
+Number of correctly classified dog images: 2
+Number of correctly classified non-dog images: 2
+Number of correctly classified breed images: 0
+----------------------------------------
+% of matches: 20.0%
+% of correctly classified dog images: 100.0%
+% of correctly classified non-dog images: 66.66666666666666%
+% of correctly classified breed images: 0.0%
+----------------------------------------
+dog was an incorrectly classfied breed :(
+.dalmatian was an incorrectly classfied dog :(
+cat was an incorrectly classfied breed :(
+dog was an incorrectly classfied breed :(
+
+** Total Elapsed Runtime: 0:0:5

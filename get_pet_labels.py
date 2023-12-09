@@ -46,7 +46,12 @@ def get_pet_labels(image_dir):
     results_dic = {}
     
     for filename in filenames:
+        
         label = filename.split('_')[:-1]
+       
+        if label[0][0] == '.':
+            label[0] = label[0][1:]
+            
         label = list(map(str.lower, label))
         label = ' '.join(label)
         results_dic[filename] = [label]

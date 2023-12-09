@@ -1,0 +1,79 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:               Backpack_01.jpeg  label:                   backpack
+ 2 key:                    Cat_01.jpeg  label:                        cat
+ 3 key:                    Dog_02.jpeg  label:                        dog
+ 4 key:                    Dog_01.jpeg  label:                        dog
+
+     MATCH:
+
+              Backpack_01.jpeg: 
+Real:                   backpack   Classifier: backpack, back pack, knapsack, packsack, rucksack, haversack
+
+                   Cat_01.jpeg: 
+Real:                        cat   Classifier:      siamese cat, siamese, cat
+
+ NOT A MATCH:
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier:               golden retriever
+
+                   Dog_01.jpeg: 
+Real:                        dog   Classifier:               golden retriever
+
+# Total Images 4 # Matches: 2 # NOT Matches: 2
+
+     MATCH:
+
+              Backpack_01.jpeg: 
+Real:                   backpack   Classifier: backpack, back pack, knapsack, packsack, rucksack, haversack  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                   Cat_01.jpeg: 
+Real:                        cat   Classifier:      siamese cat, siamese, cat  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                   Dog_02.jpeg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                   Dog_01.jpeg: 
+Real:                        dog   Classifier:               golden retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 4 # Matches: 2 # NOT Matches: 2
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+-------------------- RESULT (vgg) --------------------
+Number of images: 4
+Number of dog images: 2
+Number of non-dog images: 2
+Number of matches: 2
+Number of correctly classified dog images: 2
+Number of correctly classified non-dog images: 2
+Number of correctly classified breed images: 0
+----------------------------------------
+% of matches: 50.0%
+% of correctly classified dog images: 100.0%
+% of correctly classified non-dog images: 100.0%
+% of correctly classified breed images: 0.0%
+----------------------------------------
+backpack was an incorrectly classfied breed :(
+cat was an incorrectly classfied breed :(
+dog was an incorrectly classfied breed :(
+dog was an incorrectly classfied breed :(
+
+** Total Elapsed Runtime: 0:0:7

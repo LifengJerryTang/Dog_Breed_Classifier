@@ -1,6 +1,6 @@
 Command Line Arguments:
      dir = pet_images/ 
-    arch = resnet 
+    arch = vgg 
  dogfile = dognames.txt
 
 Pet Image Label Dictionary has 40 key-value pairs.
@@ -32,6 +32,9 @@ Real:                     beagle   Classifier:                         beagle
 
       Boston_terrier_02259.jpg: 
 Real:             boston terrier   Classifier:    boston bull, boston terrier
+
+    Golden_retriever_05182.jpg: 
+Real:           golden retriever   Classifier:               golden retriever
 
  German_shepherd_dog_04931.jpg: 
 Real:        german shepherd dog   Classifier: german shepherd, german shepherd dog, german police dog, alsatian
@@ -65,6 +68,9 @@ Real:               fox squirrel   Classifier: fox squirrel, eastern fox squirre
 
           Great_dane_05320.jpg: 
 Real:                 great dane   Classifier:                     great dane
+
+                  gecko_02.jpg: 
+Real:                      gecko   Classifier:            banded gecko, gecko
 
                Boxer_02426.jpg: 
 Real:                      boxer   Classifier:                          boxer
@@ -122,9 +128,6 @@ Real:                     poodle   Classifier:        standard poodle, poodle
                   gecko_80.jpg: 
 Real:                      gecko   Classifier: tailed frog, bell toad, ribbed toad, tailed toad, ascaphus trui
 
-    Golden_retriever_05182.jpg: 
-Real:           golden retriever   Classifier:                       leonberg
-
               Beagle_01170.jpg: 
 Real:                     beagle   Classifier:  walker hound, walker foxhound
 
@@ -132,15 +135,12 @@ Real:                     beagle   Classifier:  walker hound, walker foxhound
 Real:             great pyrenees   Classifier:                         kuvasz
 
        great_horned_owl_02.jpg: 
-Real:           great horned owl   Classifier: great grey owl, great gray owl, strix nebulosa
-
-                  gecko_02.jpg: 
-Real:                      gecko   Classifier: african chameleon, chamaeleo chamaeleon
+Real:           great horned owl   Classifier: ruffed grouse, partridge, bonasa umbellus
 
                     cat_01.jpg: 
-Real:                        cat   Classifier:   norwegian elkhound, elkhound
+Real:                        cat   Classifier:                           lynx
 
-# Total Images 40 # Matches: 33 # NOT Matches: 7
+# Total Images 40 # Matches: 35 # NOT Matches: 5
 
      MATCH:
 
@@ -162,6 +162,10 @@ PetLabelDog: 1  ClassLabelDog: 1
 
       Boston_terrier_02259.jpg: 
 Real:             boston terrier   Classifier:    boston bull, boston terrier  
+PetLabelDog: 1  ClassLabelDog: 1
+
+    Golden_retriever_05182.jpg: 
+Real:           golden retriever   Classifier:               golden retriever  
 PetLabelDog: 1  ClassLabelDog: 1
 
  German_shepherd_dog_04931.jpg: 
@@ -207,6 +211,10 @@ PetLabelDog: 0  ClassLabelDog: 0
           Great_dane_05320.jpg: 
 Real:                 great dane   Classifier:                     great dane  
 PetLabelDog: 1  ClassLabelDog: 1
+
+                  gecko_02.jpg: 
+Real:                      gecko   Classifier:            banded gecko, gecko  
+PetLabelDog: 0  ClassLabelDog: 0
 
                Boxer_02426.jpg: 
 Real:                      boxer   Classifier:                          boxer  
@@ -282,10 +290,6 @@ PetLabelDog: 1  ClassLabelDog: 1
 Real:                      gecko   Classifier: tailed frog, bell toad, ribbed toad, tailed toad, ascaphus trui  
 PetLabelDog: 0  ClassLabelDog: 0
 
-    Golden_retriever_05182.jpg: 
-Real:           golden retriever   Classifier:                       leonberg  
-PetLabelDog: 1  ClassLabelDog: 1
-
               Beagle_01170.jpg: 
 Real:                     beagle   Classifier:  walker hound, walker foxhound  
 PetLabelDog: 1  ClassLabelDog: 1
@@ -295,49 +299,44 @@ Real:             great pyrenees   Classifier:                         kuvasz
 PetLabelDog: 1  ClassLabelDog: 1
 
        great_horned_owl_02.jpg: 
-Real:           great horned owl   Classifier: great grey owl, great gray owl, strix nebulosa  
-PetLabelDog: 0  ClassLabelDog: 0
-
-                  gecko_02.jpg: 
-Real:                      gecko   Classifier: african chameleon, chamaeleo chamaeleon  
+Real:           great horned owl   Classifier: ruffed grouse, partridge, bonasa umbellus  
 PetLabelDog: 0  ClassLabelDog: 0
 
                     cat_01.jpg: 
-Real:                        cat   Classifier:   norwegian elkhound, elkhound  
-PetLabelDog: 0  ClassLabelDog: 1
+Real:                        cat   Classifier:                           lynx  
+PetLabelDog: 0  ClassLabelDog: 0
 
-# Total Images 40 # Matches: 33 # NOT Matches: 7
+# Total Images 40 # Matches: 35 # NOT Matches: 5
 
  ** Statistics from calculates_results_stats() function:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
-Pct Corr dog: 100.0 Pct Corr NOTdog:  90.0  Pct Corr Breed:  90.0
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  93.3
 
  ** Check Statistics - calculated from this function as a check:
 N Images: 40  N Dog Images: 30  N NotDog Images: 10 
-Pct Corr dog: 100.0 Pct Corr NOTdog:  90.0  Pct Corr Breed:  90.0
--------------------- RESULT (resnet) --------------------
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  93.3
+-------------------- RESULT (vgg) --------------------
 Number of images: 40
 Number of dog images: 30
 Number of non-dog images: 10
-Number of matches: 33
+Number of matches: 35
 Number of correctly classified dog images: 30
-Number of correctly classified non-dog images: 9
-Number of correctly classified breed images: 27
+Number of correctly classified non-dog images: 10
+Number of correctly classified breed images: 28
 ----------------------------------------
-% of matches: 82.5%
+% of matches: 87.5%
 % of correctly classified dog images: 100.0%
-% of correctly classified non-dog images: 90.0%
-% of correctly classified breed images: 90.0%
+% of correctly classified non-dog images: 100.0%
+% of correctly classified breed images: 93.33333333333333%
 ----------------------------------------
 cat was an incorrectly classfied breed :(
-golden retriever was an incorrectly classfied breed :(
 beagle was an incorrectly classfied breed :(
 great pyrenees was an incorrectly classfied breed :(
 rabbit was an incorrectly classfied breed :(
 fox squirrel was an incorrectly classfied breed :(
-cat was an incorrectly classfied dog :(
+gecko was an incorrectly classfied breed :(
 polar bear was an incorrectly classfied breed :(
 skunk was an incorrectly classfied breed :(
 cat was an incorrectly classfied breed :(
 
-** Total Elapsed Runtime: 0:0:41
+** Total Elapsed Runtime: 0:1:22
